@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#18171f">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#18171f">
+    <link rel="stylesheet" href="./newstyles.css">
+    <link rel="stylesheet" href="./loggedinstyles.css">
+    <!-- <link rel="manifest" href="./manifest.json"> -->
+    <link rel='icon' href='./icons8-hangouts-480.png' type='image/x-icon'>
+    <title>Wassup Desktop</title>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172413114-2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-172413114-2');
+    </script> -->
+    <!-- <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script src="./login.js" defer></script>
+    <script src="./index.js" defer></script> -->
+</head>
+<body>
+
+    <div class="updater none">
+        <div class="update">
+            <p>Auto-updating. Please wait...</p>
+            <div class="updateloader">
+                <div class="white"></div>
+            </div>
+            <button class="restart none">Restart Now</button>
+        </div>
+    </div>
+    
+    <div class="loginmain">
+        <!-- <div class="logo">
+            <p>wassup!</p>
+        </div> -->
+        <div class="leftlogo">
+            <div class="mainlogo">
+                <img src="./icons8-hangouts-480.png">
+            </div>
+            <div class="loader"></div>
+        </div>
+
+        <div class="login">
+            <!-- <div class="loading none" id="loader"></div> -->
+            <div class="formcontainer">
+                <div class="logintitle" id="title">Login</div>
+                <form class="loginform" id="login">
+                    <input type="email" id="email" placeholder="E-mail" required autocomplete="off">
+                    <input type="number" id="otp" placeholder="Enter OTP" required autocomplete="off" disabled>
+                    <button id="loginsubmit">Submit</button>
+                </form>
+            </div>
+            <div class="block"></div>
+            <div class="registerlink" id="gotosignup">Sign Up</div>
+        </div>
+
+        <div class="signup">
+            <div class="formcontainer">
+                <!-- <div class="loading none" id="loader"></div> -->
+                <div class="logintitle" id="signuptitle">Sign Up</div>
+                <form class="loginform" id="signup">
+                    <input type="text" id="username" placeholder="Username" required autocomplete="off">
+                    <input type="email" id="email" placeholder="E-mail" required autocomplete="off">
+                    <input type="number" id="otp" placeholder="Enter OTP" required autocomplete="off" disabled>
+                    <button id="signupsubmit">Submit</button>
+                </form>
+            </div>
+            <div class="block"></div>
+            <div class="registerlink" id="gotologin">Login</div>
+        </div>
+    </div>
+
+
+
+    <div class="loggedinmain">
+        <!-- <div class="chatwrapper"> -->
+        <div class="bar">
+            <div class="minimize">
+                <!-- <img src="./close.png"> -->
+            </div>
+            <div class="closeapp">
+                <!-- <img src="./close.png"> -->
+            </div>
+        </div>
+        <div class="show">
+            <div class="innershow">
+                Select a chat to start messaging!
+            </div>
+        </div>
+        <div class="main">
+            <div class="homelogo">
+                <!-- <p>wassup!</p> -->
+                <img src="./icons8-hangouts-480.png">
+            </div>
+            <!-- <div class="navbar">
+                <ul class="list">
+                    <li class="active">Chats</li>
+                    <li class="">Groups</li>
+                </ul>
+            </div> -->
+            <div class="chats">
+                <div class="loading none" id="allchatsloader"></div>
+                <div class="chatlist" id="chatlist">
+                </div>
+            </div>
+            <div class="addbutton">
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <button class="logoutbutton"><img src="./logoutbutton.png"></button>
+        </div>
+    
+        <div class="addscreen none">
+            <div class="search">
+                <input type="text" placeholder="search for people" autocomplete="off" id="searchinput">
+            </div>
+            <div class="results">
+                <div class="loading none" id="loader"></div>
+                <div class="resultlist" id="resultlist">
+                </div>
+            </div>
+            <div class="cancelbutton">
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="chatroom none">
+            <div class="loading none" id="loader1"></div>
+            <div class="header">
+                <div class="backbutton">
+                    <!-- <span></span>
+                    <span></span> -->
+                    <img src="./icons8-back-to-100.png">
+                </div>
+                <div class="usertitle">
+                    <p></p>
+                    <pre></pre>
+                </div>
+                <div class="videocamera">
+                    <img src="./cameraicon.png">
+                </div>
+            </div>
+            <div class="messages">
+            </div>
+            <div class="messageinput">
+                    <textarea rows="1" placeholder="Enter message" id="msginput"></textarea>
+                    <div class="buttondiv1">
+                        <button class="paymentbutton"><img src="./icons8-rupee-96.png"></button>
+                    </div>
+                    <div class="buttondiv">
+                        <button class="sendbutton"><img src="./sendbutton1.png"></button>
+                    </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+
+    <div class="callermodal none" id="callermodal">
+        <div class="flex">
+            <div class="callingto">
+                <p></p>
+                <p></p>
+            </div>
+            <div class="end">
+                <button class="endbutton">
+                    <img src="./endcall.png">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="receivermodal none" id="receivermodal">
+        <div class="flex">
+            <div class="callfrom">
+                <p></p>
+                <p></p>
+            </div>
+            <div class="options">
+                <button class="receivebutton">
+                    <img src="./receivebutton.png">
+                </button>
+                <button class="cutbutton">
+                    <img src="./endcall.png">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="callui none">
+        <button class="close"><img src="./close.png"></button>
+        <div class="top"></div>
+        <div class="bottom"></div>
+        <button class="mute"><img src="./mute.png"></button>
+        <button class="videomute"><img src="./videomute.png"></button>
+    </div>
+
+    <!-- <div class="landscape">
+        Not optimized for landscape mode! View in portrait mode on mobile devices only
+    </div> -->
+    <script>
+        require("./login.js");
+        // require("./index.js");
+        require("./peer.js");
+        // require("./sw.js");
+    </script>
+
+</body>
+</html>

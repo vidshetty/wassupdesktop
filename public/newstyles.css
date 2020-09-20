@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;600;700&display=swap');
+::-webkit-scrollbar{
+    width: 1px;
+}
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: lightblue;
+    border-radius: 10px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #18171f;
+    overflow-y: auto;
+    font-family: "Google Sans",sans-serif;
+    overflow: hidden;
+}
+.loginmain{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 20000;
+    background-color: #18171f;
+    transition: top 0.5s ease-in-out;
+}
+.loginmain.none{
+    display: none;
+}
+@keyframes moveup{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: -100%;
+    }
+}
+@keyframes movedown{
+    0%{
+        top: -100%;
+    }
+    100%{
+        top: 0;
+    }
+}
+.mainlogo{
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%,-50%);
+    width: 200px;
+    height: 200px;
+    transition: top 1s ease-in-out,left 1s ease-in-out;
+    /* animation: logo 1s ease-in-out 2s 1 normal forwards,move 1s ease-in-out 10s normal forwards; */
+}
+@keyframes logo{
+    0%{
+        top: 50%;
+    }
+    100%{
+        top: 45%;
+    }
+}
+@keyframes move{
+    0%{
+        left: 100%;
+    }
+    100%{
+        left: 50%;
+    }
+}
+@keyframes center{
+    0%{
+        left: 50%;
+        top: 45%;
+    }
+    100%{
+        left: 100%;
+        top: 45%;
+    }
+}
+.mainlogo img{
+    width: 100%;
+    height: auto;
+}
+.leftlogo{
+    position: absolute;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.login{
+    position: absolute;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    top: 0;
+    left: 100%;
+    z-index: 20000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: left 1s ease-in-out;
+    /* animation: moveleft 0.3s ease-in-out 0s 1 normal forwards; */
+}
+@keyframes initialleft{
+    0%{
+        left: 100%;
+    }
+    100%{
+        left: 45%;
+    }
+}
+@keyframes moveleft{
+    0%{
+        left: 100%;
+    }
+    100%{
+        left: 45%;
+    }
+} 
+.block{
+    width: 100px;
+    height: 50px;
+}
+/* .loading{
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-image: linear-gradient(to right,#14b822,#1484b8,#1414b8,#b81497,#f5f116,#f51616,#14b822);
+    background-size: 1000%;
+    animation: animate 3s linear infinite;
+}
+.loading.none{
+    display: none;
+}
+@keyframes animate{
+    0%{
+        background-position: 0% 100%;
+    }
+    50%{
+        background-position: 50% 50%;
+    }
+    100%{
+        background-position: 100% 0%;
+    }
+} */
+.formcontainer{
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+    height: 290px;
+    border: 5px solid aliceblue;
+    border-radius: 20px;
+}
+.logintitle{
+    width: 100%;
+    height: 20%;
+    padding-top: 25px;
+    text-align: center;
+    color: white;
+    font-size: 1em;
+    font-weight: 300;
+}
+.loginform{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.loginform input{
+    width: 80%;
+    height: 30px;
+    background-color: white;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Google Sans",sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    transition: background-color 0.5s ease-in-out;
+}
+.loginform input[type="number"]::-webkit-outer-spin-button,
+.loginform input[type="number"]::-webkit-inner-spin-button{
+    appearance: none;
+}
+.loginform input:focus{
+    background-color: lightcyan;
+    outline: none;
+}
+.loginform input::placeholder{
+    color: gray;
+}
+.loginform input:disabled{
+    background-color: gray;
+    color: gray;
+}
+.loginform button{
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Google Sans",sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    background-color: rgba(0,0,238,0.5);
+    color: white;
+    transition: background-color 0.1s ease-in-out;
+    cursor: pointer;
+}
+.loginform button:hover,.loginform button:focus{
+    background-color: rgba(0,0,238,0.1);
+    outline: none;
+}
+.registerlink{
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+/* .registerlink p a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+} */
+
+.toggletheme{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toggletheme p{
+    color: rgba(255,255,255,0.1);
+}
+
+.loader{
+    position: absolute;
+    width: 40%;
+    height: 5px;
+    top: 70%;
+    left: 100%;
+    transform: translate(-50%,-50%);
+    background-image: linear-gradient(to right,#4285F4,#DB4437,#F4B400,#0F9D58,aqua,#4285F4);
+    background-size: 500% 5px;
+    border-radius: 50px;
+    border: none;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    animation: design 2s linear 0s infinite normal forwards;
+    /* op 1.5s ease-in-out 2s 1 normal forwards; */
+    /* dis 1s ease-in-out 9s 1 normal forwards; */
+}
+@keyframes design{
+    0%{
+        background-position: 0% 0%;
+    }
+    50%{
+        background-position: 100% 0%;
+    }
+    100%{
+        background-position: 200% 0%;
+    }
+}
+@keyframes op{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes reapp{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes dis{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+
+.signup{
+    position: absolute;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    top: 0;
+    left: 100%;
+    z-index: 20000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* animation: moveright 1s ease-in-out 10s 1 normal forwards; */
+}
+@keyframes moveright{
+    0%{
+        left: 45%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+.updater{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500000;
+    background-color: rgba(0,0,0,0.8);
+}
+.updater.none{
+    display: none;
+}
+.update{
+    width: 500px;
+    height: 300px;
+    background-color: #131313;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+.updateloader{
+    width: 200px;
+    height: 3px;
+    background-color: #131313;
+    border-radius: 20px;
+    position: relative;
+}
+.white{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 3px;
+    background-color: white;
+    border-radius: 20px;
+    animation: whiteloader 1s ease-in-out 0s infinite alternate forwards;
+}
+.updateloader.none{
+    display: none;
+}
+@keyframes whiteloader{
+    0%{
+        left: 0px;
+    }
+    100%{
+        left: 150px;
+    }
+}
+
+.restart{
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #4285F4;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+.restart:focus{
+    outline: none;
+}
+.restart.none{
+    display: none;
+}
