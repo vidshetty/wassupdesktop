@@ -14,7 +14,7 @@
     "url": "https://github.com/vidshetty/wassupdesktop.git"
   },
   "build": {
-    "appId": "com.wassupweb.app",
+    "appId": "com.wassupdesktop.app",
     "productName": "Wassup Desktop",
     "win": {
       "target": "nsis",
